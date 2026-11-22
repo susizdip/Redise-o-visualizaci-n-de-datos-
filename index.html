@@ -1,12 +1,35 @@
+<!--
+INFOGRAFÍA Y VISUALIZACIÓN DE DATOS*
+ PROTOTIPO-REDISEÑO DE UNA MALA PAXIS
+CLINETE : AYUDNTAMIENTO DE ZARAGOZA_ DEPORTES-PISICNAS - SALUDABLES
+
+¡¡AL AGUA PATOS!!
+
+Estudio de diseño multimedia: Susana Izquierdo Ruiz
+-->
+
+
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>¡Al agua, patos! | Piscinas saludables</title>
+  <title>¡Al agua, patos! - Piscinas saludables</title>
+
 
   <style>
+ /*ICORPORAMOS EL CSS EN LA PROPIA PAG HTML CON STYLE*/
+
+/* 1. Tipografías y estilos generales */
+/* 2. Cabecera e identidad visual */
+/* 3. Estructura principal y navegación */
+/* 4. Banner y apartados desplegables */
+/* 5. Distribución de los gráficos en tarjetas */
+/* 6. Adaptación a diferentes tamaños de pantalla */
+/* 7. Controles de selección y ampliación */
+/* 8. Ventana modal para ampliar gráficos */
+/* 9. Botón y disposición de gráficos comparados */
 
  @font-face {
   font-family: "Poppins";
@@ -109,6 +132,9 @@
       margin-top: 8px;
     }
 
+
+
+
     .acordeon {
       margin-top: 10px;
     }
@@ -148,7 +174,8 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 20px;
 }
-
+/* Distribución de los ocho gráficos mediante CSS Grid.
+   Se muestran cuatro columnas en pantallas grandes. */
 .tarjeta {
   min-width: 0;
   min-height: 240px;
@@ -166,17 +193,23 @@
       margin-top: 40px;
     }
 
-    @media (max-width: 850px) {
-      .tarjetas {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+/* Diseño responsive: dos columnas en tabletas */
+@media (max-width: 850px) {
+  .tarjetas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-    @media (max-width: 500px) {
-      .tarjetas {
-        grid-template-columns: 1fr;
-      }
+/* Diseño adaptable:
+   dos columnas en tabletas y una en móviles. RESPONSIVE */
+
+@media (max-width: 850px) {
+  @media (max-width: 500px) {
+    .tarjetas {
+      grid-template-columns: 1fr;
     }
+  }
+}
 
 
 .cabecera-tarjeta {
@@ -301,7 +334,7 @@
 </head>
 
 <body>
-
+<!-- Cabecera: identidad visual de la propuesta municipal -->
   <header>
     <div class="cabecera">
       <img src="images/Logo.svg" alt="Escudo de Zaragoza">
@@ -321,7 +354,7 @@
       <span>Piscinas</span>
       <span>¿Dónde practicar deporte?</span>
     </nav>
-
+<!-- Presentación y contextualización del contenido -->
     <img
       class="banner"
       src="images/al_agua_patos.svg"
@@ -345,7 +378,7 @@
       los distintos servicios y espacios disponibles
       en las instalaciones municipales.
     </p>
-
+<!-- Botón para comparar las categorías seleccionadas -->
     <details class="acordeon">
       <summary>Actividades y participación</summary>
       <div class="contenido">
@@ -361,14 +394,14 @@
   <div class="contenido">
     <div class="tarjetas" id="contenedor-graficas"></div>
   </div>
-
+<!-- Apartado desplegable que contiene la visualización -->
   <button id="boton-comparar" type="button" disabled>
   Comparar (0)
 </button>
 </details>
 
   </main>
-
+<!-- Ventana superpuesta para visualizar un gráfico ampliado -->
 <div id="modal-grafica" class="modal" hidden>
   <div class="modal-contenido">
     <button id="cerrar-modal" class="cerrar-modal" type="button" aria-label="Cerrar">×</button>
@@ -383,7 +416,7 @@
   </footer>
 
 </body>
-
+<!-- Biblioteca p5.js y archivo JavaScript del proyecto -->
 <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.min.js"></script>
 <script src="praxis.js"></script>
 </html>
